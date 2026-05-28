@@ -1,0 +1,26 @@
+# File di configurazione di Netlify per la Scuola di Tailwind (Academy)
+
+[build]
+  # Il comando per compilare l'applicazione React + Vite
+  command = "npm run build"
+  
+  # La cartella che contiene la build statica da distribuire su CDN
+  publish = "dist"
+
+# Regola di reindirizzamento per Single Page Application (SPA)
+# Permette a React di gestire le rotte e previene spiacevoli errori 404 all'aggiornamento della pagina.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# NOTA SUL BACKEND EXPRESS:
+# Netlify è una piattaforma prevalentemente statica ed edge. Un server Express continuo (Node process)
+# non gira come demone persistente su Netlify senza essere adattato come "Serverless Function".
+# Se deciderai di ospitare anche l'endpoint delle API (/api/tutor) come funzione serverless,
+# potrai spostare la logica nel percorso `/netlify/functions/tutor.ts` ed esporla scommentando questo blocco:
+#
+# [[redirects]]
+#   from = "/api/*"
+#   to = "/.netlify/functions/:splat"
+#   status = 200

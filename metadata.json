@@ -1,0 +1,8 @@
+{
+  "name": "Tailwind Playground & Learning Academy",
+  "description": "Un ambiente interattivo per sperimentare con Tailwind CSS, con live preview, assistente AI, sfide guidate e una ricca libreria di componenti.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
